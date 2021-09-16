@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="schunk_gripper">
+  <link name="schunk_base">
+    <inertial>
+      <origin xyz="0.00046941 1.5469E-05 0.039916" rpy="0 0 0" />
+      <mass value="0.2178" />
+      <inertia ixx="0.00012189" ixy="-4.0366E-10" ixz="-6.5987E-08" iyy="0.00013684" iyz="-6.5304E-08" izz="3.9789E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/gripper/schunk_base.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/gripper/schunk_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="finger1_link">
+    <inertial>
+      <origin xyz="0.00058603 0.0043154 -0.013212" rpy="0 0 0" />
+      <mass value="0.029378" />
+      <inertia ixx="4.0686E-06" ixy="-3.3521E-07" ixz="-3.5289E-07" iyy="3.104E-06" iyz="-9.9133E-07" izz="1.6826E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/gripper/finger1_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/gripper/finger1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger1_joint" type="prismatic">
+    <origin xyz="0.02 -0.004 0.08105" rpy="1.5708 0 1.5708" />
+    <parent link="schunk_base" />
+    <child link="finger1_link" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0.006" effort="72.5" velocity="0.03" />
+    <dynamics damping="1" friction="0.7" />
+  </joint>
+  <link name="finger2_link">
+    <inertial>
+      <origin xyz="0.00057261 0.020203 -0.0042166" rpy="0 0 0" />
+      <mass value="0.030067" />
+      <inertia ixx="4.0801E-06" ixy="-3.5289E-07" ixz="3.3521E-07" iyy="1.6839E-06" iyz="9.9133E-07" izz="3.1154E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/gripper/finger2_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/gripper/finger2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finge2_joint" type="prismatic">
+    <origin xyz="0.014 0.004 0.08105" rpy="3.1416 0 -1.5708" />
+    <parent link="schunk_base" />
+    <child link="finger2_link" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0.006" effort="72.5" velocity="0.03" />
+    <dynamics damping="1" friction="0.7" />
+    <mimic joint="finger1_joint" multiplier="-1" offset="0" />
+  </joint>
+</robot>

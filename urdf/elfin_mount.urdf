@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="elfin_mount">
+  <link name="elfin_mount">
+    <inertial>
+      <origin xyz="0.0029003 -2.2145E-05 -5.3463E-05" rpy="0 0 0" />
+      <mass value="0.066326" />
+      <inertia ixx="6.5357E-05" ixy="-8.4637E-09" ixz="-2.0433E-08" iyy="3.3967E-05" iyz="-3.3847E-08" izz="3.3841E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/elfin_mount.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rosi_schunk/mesh/elfin_mount.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
