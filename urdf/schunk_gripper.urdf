@@ -52,7 +52,7 @@
     <parent link="schunk_base" />
     <child link="finger1_link" />
     <axis xyz="0 0 1" />
-    <limit lower="0" upper="0.006" effort="72.5" velocity="0.03" />
+    <limit lower="-0.006" upper="0" effort="72.5" velocity="0.03" />
     <dynamics damping="1" friction="0.7" />
   </joint>
   <link name="finger2_link">
@@ -77,7 +77,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="finge2_joint" type="prismatic">
+  <joint name="finger2_joint" type="prismatic">
     <origin xyz="0.014 0.004 0.08105" rpy="3.1416 0 -1.5708" />
     <parent link="schunk_base" />
     <child link="finger2_link" />
