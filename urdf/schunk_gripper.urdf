@@ -171,15 +171,15 @@
     <axis xyz="0 0 0" />
   </joint>
 
-  <transmission name="finger1_transmission" type="SimpleTransmission">
-    <!-- <type>transmission_interface/SimpleTransmission</type> -->
+  <transmission name="finger1_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
     <actuator name="finger1_motor" />
     <joint name="finger1_joint">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
   </transmission>
-  <transmission name="finger2_transmission" type="SimpleTransmission">
-    <!-- <type>transmission_interface/SimpleTransmission</type> -->
+  <transmission name="finger2_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
     <actuator name="finger2_motor" />
     <joint name="finger2_joint">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
