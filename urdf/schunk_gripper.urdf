@@ -84,7 +84,6 @@
     <axis xyz="0 -1 0" />
     <limit lower="0" upper="0.006" effort="72.5" velocity="0.03" />
     <dynamics damping="1" friction="0.7" />
-    <mimic joint="finger1_joint" multiplier="-1" offset="0" />
   </joint>
   <link name="sensor_link">
     <inertial>
