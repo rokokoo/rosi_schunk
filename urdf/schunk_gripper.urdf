@@ -136,7 +136,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="cable_join" type="fixed">
+  <joint name="cable_joint" type="fixed">
     <origin xyz="0.0197 0 0.0214" rpy="-1.5708 0 0" />
     <parent link="schunk_base" />
     <child link="cable_link" />
@@ -170,4 +170,19 @@
     <child link="logo_link" />
     <axis xyz="0 0 0" />
   </joint>
+
+  <transmission name="finger1_transmission" type="SimpleTransmission">
+    <!-- <type>transmission_interface/SimpleTransmission</type> -->
+    <actuator name="finger1_motor" />
+    <joint name="finger1_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  <transmission name="finger2_transmission" type="SimpleTransmission">
+    <!-- <type>transmission_interface/SimpleTransmission</type> -->
+    <actuator name="finger2_motor" />
+    <joint name="finger2_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 </robot>
